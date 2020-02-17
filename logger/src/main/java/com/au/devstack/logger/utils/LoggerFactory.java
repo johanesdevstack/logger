@@ -49,6 +49,12 @@ public class LoggerFactory {
         return FileUtil.zip(_context, listFiles, fileName);
     }
 
+    public void dispose() {
+        for (Logger log : _logs) {
+            log.stop();
+        }
+    }
+
     private Logger getLogger(String tag) {
         for (Logger log : _logs) {
             if (log.getConfig().getTAG().equals(tag))

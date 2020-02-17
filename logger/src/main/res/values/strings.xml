@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Logger</string>
+    <string name="APP_FOREGROUNDED">App is foregrounded</string>
+    <string name="APP_BACKGROUNDED">App is backgrounded</string>
 </resources>
