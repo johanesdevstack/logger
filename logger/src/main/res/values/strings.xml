@@ -2,4 +2,18 @@
     <string name="app_name">Logger</string>
     <string name="APP_FOREGROUNDED">App is foregrounded</string>
     <string name="APP_BACKGROUNDED">App is backgrounded</string>
+
+    <string name="ACTIVITY_CREATED">Activity : %1$s is created</string>
+    <string name="ACTIVITY_STARTED">Activity : %1$s is started</string>
+    <string name="ACTIVITY_RESUMED">Activity : %1$s is resumed</string>
+    <string name="ACTIVITY_PAUSED">Activity : %1$s is paused</string>
+    <string name="ACTIVITY_STOPPED">Activity : %1$s is stopped</string>
+    <string name="ACTIVITY_DESTROYED">Activity : %1$s is destroyed</string>
+
+    <string name="FRAGMENT_CREATED">Fragment : %1$s is created</string>
+    <string name="FRAGMENT_STARTED">Fragment : %1$s is started</string>
+    <string name="FRAGMENT_RESUMED">Fragment : %1$s is resumed</string>
+    <string name="FRAGMENT_PAUSED">Fragment : %1$s is paused</string>
+    <string name="FRAGMENT_STOPPED">Fragment : %1$s is stopped</string>
+    <string name="FRAGMENT_DESTROYED">Fragment : %1$s is destroyed</string>
 </resources>
