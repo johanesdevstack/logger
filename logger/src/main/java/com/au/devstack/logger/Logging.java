@@ -3,8 +3,6 @@ package com.au.devstack.logger;
 import android.content.Context;
 import android.util.Log;
 
-import androidx.fragment.app.Fragment;
-
 import com.au.devstack.logger.utils.LoggerFactory;
 
 import java.util.Arrays;
@@ -41,115 +39,65 @@ public abstract class Logging {
     }
 
     // DEBUG LEVEL
-    public static void d(String tag, Context context, String message) {
+    public static void d(String tag, Class aClass, String message) {
         String formattedStackTrace = getFormattedStackTrace();
-        Log.d(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
+        Log.d(tag, String.format("%s %s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
     }
 
-    public static void d(String tag, Context context, Throwable e) {
+    public static void d(String tag, Class aClass, Throwable e) {
         String formattedStackTrace = getFormattedStackTrace(e);
-        Log.d(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
-    }
-
-    public static void d(String tag, Fragment context, String message) {
-        String formattedStackTrace = getFormattedStackTrace();
-        Log.d(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
-    }
-
-    public static void d(String tag, Fragment context, Throwable e) {
-        String stackTrace = getFormattedStackTrace(e);
-        Log.d(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, stackTrace));
+        Log.d(tag, String.format("%s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
     }
 
     // ERROR LEVEL
-    public static void e(String tag, Context context, String message) {
+    public static void e(String tag, Class aClass, String message) {
         String formattedStackTrace = getFormattedStackTrace();
-        Log.e(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
+        Log.e(tag, String.format("%s %s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
     }
 
-    public static void e(String tag, Context context, Throwable e) {
+    public static void e(String tag, Class aClass, Throwable e) {
         String formattedStackTrace = getFormattedStackTrace(e);
-        Log.e(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
-    }
-
-    public static void e(String tag, Fragment context, String message) {
-        String formattedStackTrace = getFormattedStackTrace();
-        Log.e(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
-    }
-
-    public static void e(String tag, Fragment context, Throwable e) {
-        String formattedStackTrace = getFormattedStackTrace(e);
-        Log.e(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
+        Log.e(tag, String.format("%s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
     }
 
     // INFO LEVEL
-    public static void i(String tag, Context context, String message) {
+    public static void i(String tag, Class aClass, String message) {
         String formattedStackTrace = getFormattedStackTrace();
-        Log.i(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
+        Log.i(tag, String.format("%s %s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
     }
 
-    public static void i(String tag, Context context, Throwable e) {
+    public static void i(String tag, Class aClass, Throwable e) {
         String formattedStackTrace = getFormattedStackTrace(e);
-        Log.i(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
-    }
-
-    public static void i(String tag, Fragment context, String message) {
-        String formattedStackTrace = getFormattedStackTrace();
-        Log.i(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
-    }
-
-    public static void i(String tag, Fragment context, Throwable e) {
-        String formattedStackTrace = getFormattedStackTrace(e);
-        Log.i(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
+        Log.i(tag, String.format("%s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
     }
 
     // VERBOSE LEVEL
-    public static void v(String tag, Context context, String message) {
+    public static void v(String tag, Class aClass, String message) {
         String formattedStackTrace = getFormattedStackTrace();
-        Log.v(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
+        Log.v(tag, String.format("%s %s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
     }
 
-    public static void v(String tag, Context context, Throwable e) {
+    public static void v(String tag, Class aClass, Throwable e) {
         String formattedStackTrace = getFormattedStackTrace(e);
-        Log.v(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
-    }
-
-    public static void v(String tag, Fragment context, String message) {
-        String formattedStackTrace = getFormattedStackTrace();
-        Log.v(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
-    }
-
-    public static void v(String tag, Fragment context, Throwable e) {
-        String formattedStackTrace = getFormattedStackTrace(e);
-        Log.v(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
+        Log.v(tag, String.format("%s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
     }
 
     // WARNING LEVEL
-
-    public static void w(String tag, Context context, String message) {
+    public static void w(String tag, Class aClass, String message) {
         String formattedStackTrace = getFormattedStackTrace();
-        Log.w(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
+        Log.w(tag, String.format("%s %s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
     }
 
-    public static void w(String tag, Context context, Throwable e) {
+    public static void w(String tag, Class aClass, Throwable e) {
         String formattedStackTrace = getFormattedStackTrace(e);
-        Log.w(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
+        Log.w(tag, String.format("%s %s %s", aClass.getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
     }
 
-    public static void w(String tag, Fragment context, String message) {
-        String formattedStackTrace = getFormattedStackTrace();
-        Log.w(tag, String.format("%s %s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace, message));
-    }
-
-    public static void w(String tag, Fragment context, Throwable e) {
-        String formattedStackTrace = getFormattedStackTrace(e);
-        Log.w(tag, String.format("%s %s %s", context.getClass().getSimpleName(), CHILD_SEPARATOR, formattedStackTrace));
-    }
 
     private static String getFormattedStackTrace() {
         final StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
         StackTraceElement stackElement = stacktrace.length > 4 ? stacktrace[4] : null;
-        return stackElement == null ? "" : String.format("%s:%s:%s", stackElement.getFileName(), stackElement.getMethodName(), stackElement.getLineNumber()) + " -> ";
+        return stackElement == null ? "" : String.format("%s:%s:%s %s", stackElement.getFileName(), stackElement.getMethodName(), stackElement.getLineNumber(), CHILD_SEPARATOR);
     }
 
     private static String getFormattedStackTrace(Throwable e) {

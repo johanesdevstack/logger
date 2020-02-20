@@ -74,6 +74,8 @@ public class FileUtil {
             else
                 return null;
 
+        if (_files == null || _files.length == 0) return result;
+
         BufferedInputStream origin;
         FileOutputStream dest = new FileOutputStream(result.getAbsolutePath());
         ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(

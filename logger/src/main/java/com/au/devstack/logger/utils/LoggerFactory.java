@@ -33,6 +33,7 @@ public class LoggerFactory {
     public Logger createLogger(LoggerConfig config) {
         Logger log = new Logger(_context, config);
         _logs.add(log);
+        Logging.i(config.getTAG(), getClass(), "Logger " + config.getTAG() + " created");
         return log;
     }
 
