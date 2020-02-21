@@ -3,6 +3,7 @@ package com.au.devstack.logger;
 import android.content.Context;
 import android.util.Log;
 
+import com.au.devstack.logger.model.Logger;
 import com.au.devstack.logger.utils.LoggerFactory;
 
 import java.util.Arrays;
@@ -95,8 +96,17 @@ public abstract class Logging {
 
 
     private static String getFormattedStackTrace() {
-        final StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
-        StackTraceElement stackElement = stacktrace.length > 4 ? stacktrace[4] : null;
+        final StackTraceElement[] stacktraces = Thread.currentThread().getStackTrace();
+        StackTraceElement stackElement = null;
+        boolean found = false;
+        for (int x = 0; x < stacktraces.length; x++) {
+            if (stacktraces[x].getClassName().equals(Logging.class.getName()) || stacktraces[x].getClassName().equals(Logger.class.getName())) {
+                found = true;
+            } else if (found) {
+                stackElement = stacktraces[x];
+                break;
+            }
+        }
         return stackElement == null ? "" : String.format("%s:%s:%s %s", stackElement.getFileName(), stackElement.getMethodName(), stackElement.getLineNumber(), CHILD_SEPARATOR);
     }
 
