@@ -2,6 +2,7 @@ package com.au.devstack.logger;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 
 import com.au.devstack.logger.model.Logger;
 import com.au.devstack.logger.utils.LoggerFactory;
@@ -37,6 +38,10 @@ public abstract class Logging {
 
     public static void stopAll() {
         _factory.dispose();
+    }
+
+    public static String getId(View view) {
+        return view.getId() == View.NO_ID ? "no-id" : view.getResources().getResourceName(view.getId());
     }
 
     // DEBUG LEVEL
