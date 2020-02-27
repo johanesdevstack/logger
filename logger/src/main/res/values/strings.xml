@@ -29,4 +29,7 @@
     <string name="VIEW_INVISIBLE">View : %1$s is invisible</string>
     <string name="VIEW_GONE">View : %1$s is gone</string>
     <string name="VIEW_STATUS">View : %1$s is %2$s</string>
+
+    <string name="REGISTER">%1$s is registered</string>
+    <string name="UNREGISTER">%1$s is unregistered</string>
 </resources>
